@@ -9,6 +9,10 @@ last_port = 3000
 
 threads = []
 
+@app.route('/home')
+def home():
+    return "Hi"
+
 @app.route('/new_game')
 def hello():
     global last_port
@@ -29,3 +33,4 @@ def connect_to_game():
     return str(ports)
 
 
+app.run(host="0.0.0.0", port=2000)

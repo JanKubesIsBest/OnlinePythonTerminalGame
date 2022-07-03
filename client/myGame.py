@@ -13,7 +13,7 @@ class myGame(game):
     def __init__(self, world, collision_world, fps, playerName: str, playerSkin: str, port: int):
         super().__init__(world, collision_world, fps)
 
-        self.HOST = "127.0.0.1" 
+        self.HOST = "10.0.0.9" 
         self.PORT = port
 
         self.playerName = playerName

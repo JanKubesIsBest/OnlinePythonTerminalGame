@@ -56,11 +56,11 @@ decision_is_making = True
 print("Type c for connect, n for new server and l for list of servers currently running.")
 decision = input()
 
-list = requests.get("http://127.0.0.1:5000/list").content.decode()
+list = requests.get("http://10.0.0.9:2000/list").content.decode()
 
 
 while (decision_is_making):
-    list = requests.get("http://127.0.0.1:5000/list").content.decode()
+    list = requests.get("http://10.0.0.9:2000/list").content.decode()
     if decision == "l":
 
         print("Excellent choice, here is your list.")
@@ -77,7 +77,7 @@ while (decision_is_making):
             print("(help for possible decisions)")
             decision = input()
     elif decision == "n":
-        res = requests.get("http://127.0.0.1:5000/new_game").content.decode()
+        res = requests.get("http://10.0.0.9:2000/new_game").content.decode()
 
         print("Your new server was created at port: " + res)
         print("You will be redirected to that server in:")
@@ -89,7 +89,7 @@ while (decision_is_making):
         print("3")
         print("redirecting...")
         sleep(1)
-                
+
         main(int(res))
         break
 
